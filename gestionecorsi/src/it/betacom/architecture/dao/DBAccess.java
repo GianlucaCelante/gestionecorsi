@@ -4,6 +4,6 @@ public class DBAccess {
 	
 	//commento
 	
-	//commento2
+	//commento_irina
 	//commento_filippo
 }
