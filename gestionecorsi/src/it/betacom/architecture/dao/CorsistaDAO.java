@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetProvider;
 
 import it.betacom.businesscomponent.model.Corsista;
 
@@ -16,6 +17,14 @@ public class CorsistaDAO implements DAOConstants{
 		return new CorsistaDAO();
 	}
 	
+	private CorsistaDAO() throws DAOException{
+        try {
+            rowSet= RowSetProvider.newFactory().createCachedRowSet();
+        }catch(SQLException sql) {
+            throw new DAOException(sql);
+        }
+    }
+	
 	public void create(Connection conn, Corsista entity) throws DAOException{
 		try {
 			rowSet.setCommand(SELECT_CORSISTA);
@@ -24,7 +33,7 @@ public class CorsistaDAO implements DAOConstants{
 			rowSet.updateString(1, entity.getNomeCorsista());
 			rowSet.updateString(2, entity.getCognomeCorsista());
 			rowSet.updateInt(3, entity.getCodCorsista());
-			rowSet.updateBoolean(4, entity.getPrecedentiFormativi());
+			rowSet.updateInt(4, entity.getPrecedentiFormativi());
 			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
 			rowSet.acceptChanges();
@@ -50,7 +59,7 @@ public class CorsistaDAO implements DAOConstants{
 				cors.setNomeCorsista(rs.getString(1));
 				cors.setCognomeCorsista(rs.getString(2));
 				cors.setCodCorsista(rs.getInt(3));
-				cors.setPrecedentiFormativi(rs.getBoolean(4));
+				cors.setPrecedentiFormativi(rs.getInt(4));
 				corsista[i] = cors;
 			}
 			rs.close();

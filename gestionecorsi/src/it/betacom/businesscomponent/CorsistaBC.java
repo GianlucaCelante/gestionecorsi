@@ -28,7 +28,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public Corsista[] getCorsista() throws DAOException {
+	public Corsista[] getCorsisti() throws DAOException {
 		Corsista[] corsista=null;
 		try {
 			corsista=CorsistaDAO.getFactory().getAll(conn);

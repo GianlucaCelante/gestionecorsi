@@ -60,6 +60,13 @@ public class Corso {
 	public void setAulaCorso(String aulaCorso) {
 		this.aulaCorso = aulaCorso;
 	}
+	@Override
+	public String toString() {
+		return "Corso [codCorso=" + codCorso + ", codDocente=" + codDocente + ", nomeCorso=" + nomeCorso
+				+ ", dataInizioCorso=" + dataInizioCorso + ", dataFineCorso=" + dataFineCorso + ", costoCorso="
+				+ costoCorso + ", commentiCorso=" + commentiCorso + ", aulaCorso=" + aulaCorso + "]";
+	}
+	
 	
 	
 }

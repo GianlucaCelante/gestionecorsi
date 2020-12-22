@@ -5,13 +5,16 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Statement;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import it.betacom.architecture.dao.CorsistaDAO;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dao.DBAccess;
+import it.betacom.businesscomponent.ClientFacade;
 import it.betacom.businesscomponent.model.Corsista;
 
 public class CorsistaDAOTest {
@@ -24,8 +27,7 @@ public class CorsistaDAOTest {
 		corsista = new Corsista();
 		corsista.setNomeCorsista("Max");
 		corsista.setCognomeCorsista("Rossi");
-		corsista.setCodCorsista(1);
-		corsista.setPrecedentiFormativi(true);
+		corsista.setPrecedentiFormativi(0);
 	}
 	
 	@Test
@@ -42,5 +44,54 @@ public class CorsistaDAOTest {
 			exc.printStackTrace();
 			fail("Recupero ordine fallito");
 		}
+	}
+	
+	
+	@Test
+	void testCreateCorsista() {
+
+		try {
+			
+			ClientFacade.getIstance().createCorsista(corsista);
+			
+			System.out.println("Corsista registrato");
+			
+			
+		} catch (DAOException | ClassNotFoundException | IOException exc) {
+
+			exc.printStackTrace();
+
+			fail("Creazione corsista fallita test");
+
+		}
+
+	}
+	
+	@AfterAll
+	static void tearDown() throws Exception{
+		
+		try {
+
+
+
+			Connection conn = DBAccess.getConnection();
+
+			Statement stmt = conn.createStatement();
+
+			stmt.executeUpdate("delete from corsista where codcorsista = " + corsista.getCodCorsista());
+
+			conn.commit();
+			
+			conn.close();
+			
+			corsista = null;
+
+			
+		} catch (DAOException exc) {
+
+			exc.printStackTrace();
+			fail("Pulizia fallita");
+		}
+		
 	}
 }
