@@ -16,6 +16,15 @@ a{
 a:hover{
 	color:white!important;
 }
+.navbar-inverse {
+	background-color: #0D6EFD!important;
+	border-color: #0D6EFD!important;
+}
+
+.container-fluid{
+	background-color: #0D6EFD!important;
+}
+
 .form-signin h1{
 	margin-bottom: 15%;
 }
@@ -36,11 +45,15 @@ a:hover{
 .form-signin button{
 	margin-top: 10%;
 }
-.navbar-inverse {
-	background-color: #0D6EFD!important;
-	border-color: #0D6EFD!important;
-}
-
-.container-fluid{
-	background-color: #0D6EFD!important;
+.wrapper{
+	width: 25%;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 10px;
+	margin: 10% auto;
+	box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }

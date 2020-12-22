@@ -7,7 +7,8 @@
 		<link rel="stylesheet" href="css/style.css">
 		<title>Insert title here</title>
 	</head>
-	<body class="text-center">
+<body class="text-center">
+	<div class="wrapper">
 		<form class="form-signin">
 			<h1 class="h3 font-weight-normal">Effettua il login</h1>
 			<label for="codice" class="sr-only">Codice</label>
@@ -16,5 +17,6 @@
 			<input type="password" id="password" class="form-control" placeholder="Password" required autofocus>
 			<button class="btn btn-lg btn-primary btn-block" type="submit"> Login </button> 
 		</form>
-	</body>
+	</div>
+</body>
 </html>
