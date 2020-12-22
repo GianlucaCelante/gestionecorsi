@@ -1,10 +1,10 @@
 package it.betacom.businesscomponent.model;
 
 public class Docente {
-	String nomeDocente;
-	String cognomeDocente;
-	String cvDocente;
-	int codDocente;
+	private String nomeDocente;
+	private String cognomeDocente;
+	private String cvDocente;
+	private int codDocente;
 	
 	public String getNomeDocente() {
 		return nomeDocente;
