@@ -32,14 +32,14 @@ costocorso number(7,2),
 commenticorso varchar2(200),
 aulacorso varchar2(30),
 constraint p_codcorso primary key(codcorso),
-constraint f_coddocente foreign key(coddocente) references docente(coddocente) on delete cascade
+constraint f_coddocente foreign key(coddocente) references docente(coddocente)
 )
 
 create table corso_corsista(
 codcorso int,
 codcorsista int,
 constraint f_codcorso foreign key(codcorso) references corso(codcorso) on delete cascade,
-constraint f_codcorsista foreign key(codcorsista) references corsista(codcorsista) on delete cascade,
+constraint f_codcorsista foreign key(codcorsista) references corsista(codcorsista),
 constraint p_cc primary key(codcorso, codcorsista)
 )
 
