@@ -1,0 +1,1 @@
+insert into docente values('Massimo', 'Rossi', 'cv', 1)
