@@ -9,7 +9,7 @@
 	</head>
 	<body class="text-center">
 		<form class="form-signin">
-			<h1 class="h3 mb-3 font-weight-normal">Effettua il login</h1>
+			<h1 class="h3 font-weight-normal">Effettua il login</h1>
 			<label for="codice" class="sr-only">Codice</label>
 			<input type="text" id="codice" class="form-control" placeholder="Codice admin" required autofocus>
 			<label for="password" class="sr-only">Codice</label>

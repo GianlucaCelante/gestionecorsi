@@ -16,20 +16,26 @@ a{
 a:hover{
 	color:white!important;
 }
+.form-signin h1{
+	margin-bottom: 15%;
+}
 .form-signin{
 	width: 100%;
 	max-width: 330px;
 	padding: 15px;
-	margin: 0 auto;
+	margin: 10% auto;
 }
 .form-signin .form-control{
 	position:relative;
 	box-sizing: border-box;
 	height: auto;
-	padding: 10px;
-	font-size: 16px;
+	padding: 4%;
+	font-size: 1em;
+	margin-bottom: 2%;
 }
-
+.form-signin button{
+	margin-top: 10%;
+}
 .navbar-inverse {
 	background-color: #0D6EFD!important;
 	border-color: #0D6EFD!important;
