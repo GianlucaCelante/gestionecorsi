@@ -2,6 +2,7 @@ create table amministratore(
 nomeadmin varchar2(30),
 cognomeadmin varchar2(30),
 codadmin int,
+passwordadmin varchar2(100) not null,
 constraint p_codadmin primary key(codadmin)
 )
 
