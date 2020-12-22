@@ -5,5 +5,5 @@ import java.io.IOException;
 import it.betacom.architecture.dao.DAOException;
 
 public interface IdGeneratorInterface {
-	long nextId() throws DAOException, ClassNotFoundException, IOException;
+	int nextId() throws DAOException, ClassNotFoundException, IOException;
 }

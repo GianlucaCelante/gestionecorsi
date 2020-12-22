@@ -29,13 +29,13 @@ public class IdGeneratorCorsista implements IdGeneratorInterface, DAOConstants {
 	}
 
 	@Override
-	public long nextId() throws DAOException, ClassNotFoundException, IOException {
-		long id = 0;		
+	public int nextId() throws DAOException, ClassNotFoundException, IOException {
+		int id = 0;		
 		try {			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(SELECT_CORSISTASEQ);
 			rs.next();			
-			id = rs.getLong(1);			
+			id = rs.getInt(1);			
 		} catch (SQLException e) {
 			throw new DAOException(e);		
 		

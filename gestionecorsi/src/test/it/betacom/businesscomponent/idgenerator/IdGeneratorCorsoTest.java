@@ -16,7 +16,7 @@ class IdGeneratorCorsoTest {
 		try {		
 			IdGeneratorCorso idGen = IdGeneratorCorso.getIstance();			
 			assertNotNull(idGen, "Istanza create correttamente");			
-			long valore = idGen.nextId();			
+			int valore = idGen.nextId();			
 			assertEquals(valore, idGen.nextId() - 1, "Test sequenza");			
 		} catch (DAOException | ClassNotFoundException | IOException e) {
 			e.printStackTrace();			
