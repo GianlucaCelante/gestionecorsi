@@ -3,7 +3,7 @@
 	<div class="my-2 my-md-0 mr-md-3">
 		<%
 			String admin = (String)session.getAttribute("nomeadmin");
-			if(admin == null){
+			if(admin != null){
 		%>
 				<a class="p-2 text-dark" href="statistica.jsp">Visualizza Statistiche</a>
 				<a class="p-2 text-dark" href="corsi.jsp">Visualizza Corsi</a>
