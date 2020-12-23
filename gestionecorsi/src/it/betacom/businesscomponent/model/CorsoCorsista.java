@@ -16,6 +16,8 @@ public class CorsoCorsista {
 	public void setCodCorsista(int codCorsista) {
 		this.codCorsista = codCorsista;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "CorsoCorsista [codCorso=" + codCorso + ", codCorsista=" + codCorsista + "]";
+	}
 }

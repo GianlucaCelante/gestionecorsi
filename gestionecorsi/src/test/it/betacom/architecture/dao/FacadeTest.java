@@ -17,12 +17,14 @@ import it.betacom.businesscomponent.ClientFacade;
 import it.betacom.businesscomponent.model.Amministratore;
 import it.betacom.businesscomponent.model.Corsista;
 import it.betacom.businesscomponent.model.Corso;
+import it.betacom.businesscomponent.model.CorsoCorsista;
 import it.betacom.businesscomponent.model.Docente;
 
 class FacadeTest {
 
 	private static Corsista corsista;
 	private static Corso corso;
+	private static CorsoCorsista corsoCorsista;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -40,6 +42,11 @@ class FacadeTest {
 		corso.setAulaCorso("aula");
 		corso.setCommentiCorso("descrizione");
 		corso.setCodDocente(1);
+		
+		corsoCorsista = new CorsoCorsista();
+		corsoCorsista.setCodCorso(1);
+		corsoCorsista.setCodCorsista(1);
+		
 	}
 
 	@AfterEach
@@ -107,6 +114,25 @@ class FacadeTest {
 
 		}
 	}
+	
+	@Test
+	void testCreateCorsoCorsista() {
+
+		try {
+
+			ClientFacade.getIstance().createCorsoCorsista(corsoCorsista);
+
+			System.out.println("CorsoCorsista registrato " + corsoCorsista.toString());
+
+		} catch (DAOException | ClassNotFoundException | IOException exc) {
+
+			exc.printStackTrace();
+
+			fail("Creazione corso fallita test");
+
+		}
+
+	}
 
 	@Test
 	void testCreateAndDeleteCorsista() {
@@ -158,6 +184,28 @@ class FacadeTest {
 			Corsista[] corsisti = ClientFacade.getIstance().getCorsisti();
 
 			for(Corsista c : corsisti) {
+				
+				System.out.println("Corsisti:" + c.toString());
+			}
+
+		} catch (DAOException | ClassNotFoundException | IOException exc) {
+
+			exc.printStackTrace();
+
+			fail("Creazione corsista fallita test");
+
+		}
+
+	}
+	
+	@Test
+	void testgetCorsiCorsisti() {
+
+		try {
+
+			CorsoCorsista[] corsiCorsisti = ClientFacade.getIstance().getCorsiCorsisti();
+
+			for(CorsoCorsista c : corsiCorsisti) {
 				
 				System.out.println("Corsisti:" + c.toString());
 			}
