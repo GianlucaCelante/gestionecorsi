@@ -1,68 +1,17 @@
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuApp">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.jsp">Home</a>
+<div class="fixed-bottom" style="border-top:1px solid grey;">
+	<div class="d-flex mb-2 mt-2">
+		<div class="bg-white ml-5" style="background-color:red; width:50%;">
+			Seguici anche su: 	<br><a class="ml-4" href="#">Facebook</a>
+								<br><a class="ml-4" href="#">Instagram</a>
+								<br><a class="ml-4" href="#">Twitter</a>
 		</div>
-		<div class="collapse navbar-collapse" id="menuApp">
-			<%
-				String user = (String)session.getAttribute("username");
-				if(user == null){
-			%>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="registra.jsp">
-						<span class="glyphicon glyphicon-user"></span> Sign-up
-					</a>
-				</li>
-				<li>
-					<a href="login.jsp">
-						<span class="glyphicon glyphicon-login"></span> Login
-					</a>
-				</li>
-			</ul>
-			<%
-				}else{
-			%>
-			<ul class="nav navbar-nav">
-				<li><a href="acquisti.jsp">Acquisti</a></li>
-				<li><a href="visualizza.jsp">Riepilogo ordine</a></li>
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="visualizza.jsp">
-						<span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>
-					</a>
-				</li>
-				<li>
-                    <div class="dropdown" style="margin-top: 8px">
-                        <button class="btn dropdown-toggle" type="button"
-                            data-toggle="dropdown"
-                            style="background-color: #303030; color: #F9F9F9"><%=user%>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="disabilita">Riepilogo dati</a></li>
-                            <li><a href="user.jsp">Modifica utente</a></li>
-
-                        </ul>
-                    </div>
-                </li>
-				<li>
-					<a href="logout.jsp">
-						<span class="glyphicon glyphicon-off"></span> Logout
-					</a>
-				</li>
-			</ul>
-			<%
-				}
-			%>
+		<div class="bg-white mr-5" style="background-color:blue; width:50%;">
+			B
 		</div>
 	</div>
-</nav>
+	<div class="d-flex mb-3 text-center">
+		<div class="bg-white" style="background-color:red; width:100%;">
+			Per segnalazioni o consulenza contattare l'admin alla mail di riferimento che trovi <a href="mailto:admin@betacom.it">qui</a>
+		</div>
+	</div>
+</div>
