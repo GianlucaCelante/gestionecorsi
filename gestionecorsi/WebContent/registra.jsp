@@ -5,7 +5,7 @@
 		<meta charset="ISO-8859-1">
 		<%@include file="CDN.html"%>
 		<link rel="stylesheet" href="css/style.css">
-		<title>Insert title here</title>
+		<title>Registrazione</title>
 	</head>
 	<body>
 		<jsp:include page="header.jsp"/>
