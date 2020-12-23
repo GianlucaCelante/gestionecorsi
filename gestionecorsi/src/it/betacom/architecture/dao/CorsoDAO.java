@@ -40,6 +40,7 @@ public class CorsoDAO implements DAOConstants{
 			rw.updateDouble(6, entity.getCostoCorso());
 			rw.updateString(7, entity.getCommentiCorso());
 			rw.updateString(8, entity.getAulaCorso());
+			rw.updateInt(9,  entity.getPostiDisp());
 			rw.insertRow();
 			rw.moveToCurrentRow();
 			rw.acceptChanges();
@@ -81,6 +82,7 @@ public class CorsoDAO implements DAOConstants{
 					c.setCostoCorso(rs.getDouble(6));
 					c.setCommentiCorso(rs.getString(7));
 					c.setAulaCorso(rs.getString(8));
+					c.setPostiDisp(9);
 					corsi[i] = c;
 				}
 		} catch (SQLException sql) {

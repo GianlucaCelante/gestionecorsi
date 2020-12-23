@@ -11,6 +11,7 @@ public class Corso {
 	private double costoCorso;
 	private String commentiCorso;
 	private String aulaCorso;
+	private int postiDisp;
 	
 	public int getCodCorso() {
 		return codCorso;
@@ -60,11 +61,17 @@ public class Corso {
 	public void setAulaCorso(String aulaCorso) {
 		this.aulaCorso = aulaCorso;
 	}
+	public int getPostiDisp() {
+		return postiDisp;
+	}
+	public void setPostiDisp(int postiDisp) {
+		this.postiDisp = postiDisp;
+	}
 	@Override
 	public String toString() {
 		return "Corso [codCorso=" + codCorso + ", codDocente=" + codDocente + ", nomeCorso=" + nomeCorso
 				+ ", dataInizioCorso=" + dataInizioCorso + ", dataFineCorso=" + dataFineCorso + ", costoCorso="
-				+ costoCorso + ", commentiCorso=" + commentiCorso + ", aulaCorso=" + aulaCorso + "]";
+				+ costoCorso + ", commentiCorso=" + commentiCorso + ", aulaCorso=" + aulaCorso + ", postiDisp=" + postiDisp+ "]";
 	}
 	
 	
