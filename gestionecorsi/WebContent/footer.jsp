@@ -3,7 +3,6 @@
 		<div class="bg-white ml-5" style="background-color:red; width:50%;">
 			Seguici anche su: 	<br><a href="#">Facebook</a>
 								<br><a href="#">Instagram</a>
-								<br><a href="#">Twitter</a>
 		</div>
 		<div class="bg-white ml-5" style="background-color:red; width:50%;">
 			Altri link:		 	<br><a href="#">Condizioni Generali</a>
