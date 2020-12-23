@@ -32,6 +32,7 @@ datafinecorso date,
 costocorso number(7,2),
 commenticorso varchar2(200),
 aulacorso varchar2(30),
+postidisp int,
 constraint p_codcorso primary key(codcorso),
 constraint f_coddocente foreign key(coddocente) references docente(coddocente)
 )
