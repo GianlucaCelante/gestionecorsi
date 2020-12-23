@@ -9,7 +9,7 @@
 	</head>
 <body class="text-center">
 	<div class="wrapper">
-		<form class="form-signin">
+		<form class="form-signin" action = "/<%= application.getServletContextName() %>/login" method="post" id="loginForm">
 			<h1 class="h3 font-weight-normal">Effettua il login</h1>
 			<label for="codice" class="sr-only">Codice</label>
 			<input type="text" id="codice" class="form-control" placeholder="Codice admin" required autofocus>
