@@ -60,15 +60,11 @@ public class Login extends HttpServlet {
 		}
 		
 	}
-	 private boolean isInt(String str)
-	 {
-	     try
-	     {
+	 private boolean isInt(String str){
+	     try{
 	         Integer.parseInt(str);
 	         return true;
-	     }
-	     catch(NumberFormatException nfe)
-	     {
+	     }catch(NumberFormatException nfe){
 	         return false;
 	     }
 	 }
