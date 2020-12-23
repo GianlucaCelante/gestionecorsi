@@ -24,7 +24,6 @@ public class CorsoDAOTest {
 	static void setUp() throws Exception{
 		conn = DBAccess.getConnection();
 		corso = new Corso();
-		corso.setCodCorso(1);
 		corso.setCodDocente(1);
 		corso.setNomeCorso("pilates");
 		corso.setDataInizioCorso(new Date());
@@ -32,6 +31,7 @@ public class CorsoDAOTest {
 		corso.setCostoCorso(550.00);
 		corso.setCommentiCorso("commento");
 		corso.setAulaCorso("Lum250");
+		corso.setPostiDisp(1);
 	}
 	
 	@Test
@@ -51,6 +51,12 @@ public class CorsoDAOTest {
 	void testGetAll() {
 		try {
 			Corso[] corsi = CorsoDAO.getFactory().getAll(conn);
+			
+			for(Corso c: corsi) {
+				
+				System.out.println(c.toString());
+			}
+			
 			assertNotNull(corsi);
 		} catch (DAOException e) {
 			e.printStackTrace();
