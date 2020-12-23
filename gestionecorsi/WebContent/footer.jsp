@@ -1,12 +1,14 @@
 <div class="fixed-bottom" style="border-top:1px solid grey;">
 	<div class="d-flex mb-2 mt-2">
 		<div class="bg-white ml-5" style="background-color:red; width:50%;">
-			Seguici anche su: 	<br><a class="ml-4" href="#">Facebook</a>
-								<br><a class="ml-4" href="#">Instagram</a>
-								<br><a class="ml-4" href="#">Twitter</a>
+			Seguici anche su: 	<br><a href="#">Facebook</a>
+								<br><a href="#">Instagram</a>
+								<br><a href="#">Twitter</a>
 		</div>
-		<div class="bg-white mr-5" style="background-color:blue; width:50%;">
-			B
+		<div class="bg-white ml-5" style="background-color:red; width:50%;">
+			Altri link:		 	<br><a href="#">Condizioni Generali</a>
+								<br><a href="#">Informazioni</a>
+								<br><a href="#">Area Legale</a>
 		</div>
 	</div>
 	<div class="d-flex mb-3 text-center">
