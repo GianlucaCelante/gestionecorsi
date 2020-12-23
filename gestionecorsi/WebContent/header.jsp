@@ -14,7 +14,7 @@
 		%>
 				<a class="p-2 text-dark" href="statistica.jsp">Visualizza Statistiche</a>
 				<a class="p-2 text-dark" href="corsi.jsp">Visualizza Corsi</a>
-				<a class="p-2 text-dark" href="login.jsp">Login</a>
+				<a class="p-2 text-dark" href="index.jsp">Login</a>
 		<%
 			}
 		%>
