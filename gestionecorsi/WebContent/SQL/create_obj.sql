@@ -7,8 +7,8 @@ constraint p_codadmin primary key(codadmin)
 )
 
 create table corsista(
-nomecorsista varchar2(30),
-cognomecorsista varchar2(30),
+nomecorsista varchar2(30) not null,
+cognomecorsista varchar2(30) not null,
 codcorsista int,
 precedentiformativi number(1),
 constraint p_codcorsista primary key(codcorsista),
@@ -19,16 +19,16 @@ create table docente(
 nomedocente varchar2(30),
 cognomedocente varchar2(30),
 cvdocente varchar2(30),
-coddocente int,
+coddocente int not null,
 constraint p_coddocente primary key(coddocente)
 )
 
 create table corso(
 codcorso int,
 coddocente int,
-nomecorso varchar2(30),
-datainiziocorso date,
-datafinecorso date,
+nomecorso varchar2(30) not null,
+datainiziocorso date not null,
+datafinecorso date not null,
 costocorso number(7,2),
 commenticorso varchar2(200),
 aulacorso varchar2(30),
