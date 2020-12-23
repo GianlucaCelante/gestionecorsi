@@ -76,6 +76,12 @@ public class ClientFacade {
 
 	}
 	
+	public CorsoCorsista[] getCorsiCorsisti() throws DAOException {
+		
+		return corsoCorsistaBC.getAll();
+		
+	}
+	
 	public Amministratore getAmministratoreById(Integer id) throws DAOException {
 
 		return amministratoreBC.getAmministratoreById(id);
