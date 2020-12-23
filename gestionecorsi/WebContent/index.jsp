@@ -10,6 +10,12 @@
 <body class="text-center">
 	<div class="wrapper">
 		<form class="form-signin" action = "/<%= application.getServletContextName() %>/login" method="post" id="loginForm">
+			<%
+				if(session.getAttribute("tentativi") != null){
+			%>	<div class="alert-warning"> 
+						<p> Codice o password errata! Hai ancora <%= session.getAttribute("tentativi") %> tentativi! </p>
+				</div>
+			<% }%>
 			<h1 class="h3 font-weight-normal">Effettua il login</h1>
 			<label for="codice" class="sr-only">Codice</label>
 			<input type="text" id="codice" class="form-control" placeholder="Codice admin" required autofocus>
