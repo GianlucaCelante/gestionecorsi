@@ -44,6 +44,6 @@
 				<button class="btn btn-lg btn-primary btn-block" style="margin-top:5%;" type="submit">Registrati</button> 
 			</form>
 		</div>
-		<jsp:include page="footer.jsp"/>
+		<!--<jsp:include page="footer.jsp"/>-->
 	</body>
 </html>
