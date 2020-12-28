@@ -13,7 +13,7 @@
 		<jsp:include page="header.jsp"/>
 		<div class="wrapper" style="margin-top:7%;">
 			<h1 class="h3 font-weight-normal">Effettua la registrazione</h1>
-			<form class="form-signin" style="margin-top: 0%!important; margin-bottom: 0%!important;">
+			<form class="form-signin" style="margin-top: 0%!important; margin-bottom: 0%!important;" action="/<%=application.getServletContextName()%>/registra" method="post">
 				<label class="text-left">Nome</label>
 				<input type="text" id="nome" class="form-control" placeholder="Nome" autocomplete="off" required autofocus>
 				<label class="text-left">Cognome</label>
