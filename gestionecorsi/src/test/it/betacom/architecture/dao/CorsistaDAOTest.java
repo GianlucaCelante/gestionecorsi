@@ -67,6 +67,42 @@ public class CorsistaDAOTest {
 
 	}
 	
+	
+	@Test
+	void testGetCodCorsisti() throws DAOException, ClassNotFoundException, IOException{
+		conn=DBAccess.getConnection();
+		try {
+			int[] corsisti = CorsistaDAO.getFactory().getCodCorsisti(conn);
+
+			for(int i = 0; i > corsisti.length; i++) {
+				System.out.println(corsisti[i]);
+			}
+			System.out.println();
+		}catch(DAOException exc) {
+			exc.printStackTrace();
+			fail("Recupero ordine fallito");
+		}
+	}
+	
+	@Test
+	void testGetCorsista() throws DAOException, ClassNotFoundException, IOException{
+		conn=DBAccess.getConnection();
+		
+		try {
+
+			Corsista corsista = CorsistaDAO.getFactory().getCorsista(conn, 1);
+			
+			System.out.println(corsista.toString());
+			
+			
+		}catch(DAOException exc) {
+			exc.printStackTrace();
+			fail("Recupero ordine fallito");
+		}
+	}
+	
+	
+	
 	@AfterAll
 	static void tearDown() throws Exception{
 		
@@ -93,5 +129,6 @@ public class CorsistaDAOTest {
 			fail("Pulizia fallita");
 		}
 		
+	
 	}
 }

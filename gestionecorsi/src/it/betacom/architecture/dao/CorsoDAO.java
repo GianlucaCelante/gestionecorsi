@@ -9,7 +9,6 @@ import java.sql.Statement;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-
 import it.betacom.businesscomponent.model.Corso;
 
 public class CorsoDAO implements DAOConstants{
@@ -89,6 +88,44 @@ public class CorsoDAO implements DAOConstants{
 			throw new DAOException(sql);
 		}
 		return corsi;
+	}
+	
+	public Corso getCorso(Connection conn, int codcorso) throws DAOException {
+		
+		Corso corso = null;
+		
+		PreparedStatement ps;
+		
+		try {
+			
+			ps = conn.prepareStatement(SELECT_CORSO_BYID);
+			ps.setLong(1, codcorso);
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				corso = new Corso();
+				corso.setCodCorso(rs.getInt(1));
+				corso.setCodDocente(rs.getInt(2));
+				corso.setNomeCorso(rs.getString(3));
+				corso.setDataInizioCorso(new java.util.Date(rs.getDate(4).getTime()));
+				corso.setDataFineCorso(new java.util.Date(rs.getDate(5).getTime()));
+				corso.setCostoCorso(rs.getDouble(6));
+				corso.setCommentiCorso(rs.getString(7));
+				corso.setAulaCorso(rs.getString(8));
+				corso.setPostiDisp(rs.getInt(9));
+				
+			}
+			
+		} catch (SQLException sql) {
+				
+			throw new DAOException(sql);
+		}
+			
+			
+		return corso;
+		
+		
 	}
 }
 

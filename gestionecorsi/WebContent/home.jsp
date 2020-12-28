@@ -1,11 +1,16 @@
 
+<%@page import="it.betacom.businesscomponent.CorsistaBC"%>
+<%@page import="it.betacom.architecture.dao.CorsistaDAO"%>
+<%@page import="it.betacom.architecture.dao.CorsoDAO"%>
+<%@page import="java.util.Date"%>
+<%@page import="it.betacom.businesscomponent.model.Corso"%>
 <%@page import="it.betacom.businesscomponent.model.CorsoCorsista"%>
 <%@page import="it.betacom.businesscomponent.ClientFacade"%>
 <%@page import="it.betacom.businesscomponent.model.Corsista"%>
 <%
 	String admin = (String) session.getAttribute("admin");
 
-if (admin == null) {
+if (admin != null) {
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -28,11 +33,11 @@ if (admin == null) {
 	<jsp:include page="header.jsp"></jsp:include>
 
 
-	<div class="container">
+	<div class="container" style="margin-top: 100px;">
 
 		<div class="table-responsive">
 
-			<table class="table table-hover" style="width: 100%;">
+			<table class="table table-hover">
 
 				<thead>
 					<tr>
@@ -41,51 +46,49 @@ if (admin == null) {
 						<td style="width: 200px;">Nome</td>
 						<td style="width: 200px;">Cognome</td>
 						<td style="width: 200px;">Precedenti formativi</td>
-						<td style="width: 200px;">Codice corso</td>
+						<td style="width: 200px;">Corso</td>
 
 					</tr>
 
 				</thead>
 
 				<tbody>
-				
-					<%
-						
-					Corsista[] corsisti = ClientFacade.getIstance().getCorsisti();
-					CorsoCorsista[] corsiCorsisti = ClientFacade.getIstance().getCorsiCorsisti();
-						
-					for(Corsista c: corsisti){
-						
-					%>
-				
-					<tr>
-						<td><%= c.getCodCorsista() %></td>
-						<td><%= c.getNomeCorsista() %></td>
-						<td><%= c.getCognomeCorsista() %></td>
-						<td><%= c.getPrecedentiFormativi() %></td>
 
 					<%
 					
-						}
+					int[] codCorsistiAttivi = ClientFacade.getIstance().getCodCorsisti();
 					
-						for(CorsoCorsista cc: corsiCorsisti){
-							
-					%>
+					for(int i = 0; i < codCorsistiAttivi.length; i++){
 						
-						<td><%= cc.getCodCorso() %></td>
+						Corsista corsista = ClientFacade.getIstance().getCorsista(codCorsistiAttivi[i]);
+						
+					%>
+
+
+					<tr>
 					
-					<%
-					
-						}
-					
-					%>	
+						<td><%= corsista.getCodCorsista() %></td>
+						<td><%= corsista.getNomeCorsista() %></td>
+						<td><%= corsista.getCognomeCorsista() %></td>
+						<td><%= corsista.getPrecedentiFormativi() %></td>
+
 					</tr>
-					
-					
+
+					<%
+						
+						}
+						
+					%>
+				
 
 				</tbody>
 
 			</table>
+			
+			
+			<button class="btn btn-info">
+			<a href="registra.jsp">Nuovo corsista</a>
+			</button>
 
 		</div>
 
@@ -99,6 +102,8 @@ if (admin == null) {
 
 <%
 	} else {
+
+		response.sendRedirect("accessonegato.jsp");
 
 }
 %>

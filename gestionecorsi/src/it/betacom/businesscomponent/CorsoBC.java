@@ -38,6 +38,23 @@ public class CorsoBC {
 		}
 	}
 	
+	public Corso getCorsoById(int codcorso) throws DAOException {
+		
+		Corso corso = null;
+		
+		try {
+			
+			
+			corso = CorsoDAO.getFactory().getCorso(conn, codcorso);
+			
+		} catch(SQLException sql){
+			throw new DAOException(sql);
+		}
+		
+		return corso;
+		
+	}
+	
 	public Corso[] getAll() throws DAOException{
 		Corso[] corsi = null;
 		try {

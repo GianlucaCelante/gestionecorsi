@@ -58,6 +58,11 @@ public class ClientFacade {
 
 	}
 	
+	public Corso getCorsoById(int codcorso) throws DAOException {
+		
+		return corsoBC.getCorsoById(codcorso);
+	}
+	
 	public Corso[] getCorsi() throws DAOException {
 		
 		return corsoBC.getAll();
@@ -76,9 +81,21 @@ public class ClientFacade {
 
 	}
 	
+	public int[] getCodCorsisti() throws DAOException {
+
+		return corsistaBC.getCodCorsisti();
+
+	}
+	
 	public CorsoCorsista[] getCorsiCorsisti() throws DAOException {
 		
 		return corsoCorsistaBC.getAll();
+		
+	}
+	
+	public Corsista getCorsista(int codcorsista) throws DAOException {
+		
+		return corsistaBC.getCorsistaById(codcorsista);
 		
 	}
 	

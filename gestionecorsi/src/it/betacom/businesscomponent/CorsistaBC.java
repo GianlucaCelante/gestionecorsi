@@ -28,6 +28,23 @@ public class CorsistaBC {
 		}
 	}
 	
+	public Corsista getCorsistaById(int codcorsista) throws DAOException{
+		
+		Corsista corsista = null;
+		
+		try {
+			
+			corsista = CorsistaDAO.getFactory().getCorsista(conn, codcorsista);
+			
+			
+		}catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return corsista;
+		
+		
+	}
+	
 	public Corsista[] getCorsisti() throws DAOException {
 		Corsista[] corsista=null;
 		try {
@@ -37,4 +54,15 @@ public class CorsistaBC {
 		}
 		return corsista;
 	}
+	
+	public int[] getCodCorsisti() throws DAOException {
+		int[] corsisti=null;
+		try {
+			corsisti=CorsistaDAO.getFactory().getCodCorsisti(conn);
+		}catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return corsisti;
+	}
+	
 }
