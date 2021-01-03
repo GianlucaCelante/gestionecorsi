@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import it.betacom.architecture.dao.DAOException;
-
 import it.betacom.architecture.dao.CorsoDAO;
 import it.betacom.architecture.dao.DBAccess;
 import it.betacom.businesscomponent.model.Corso;
@@ -63,7 +62,7 @@ public class CorsoDAOTest {
 			fail("creazione articolo fallita");
 		}
 	}
-	
+
 	@AfterAll
 	static void cleanUp() throws Exception{
 		try {

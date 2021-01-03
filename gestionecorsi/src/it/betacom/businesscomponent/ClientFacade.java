@@ -81,12 +81,6 @@ public class ClientFacade {
 
 	}
 	
-	public int[] getCodCorsisti() throws DAOException {
-
-		return corsistaBC.getCodCorsisti();
-
-	}
-	
 	public CorsoCorsista[] getCorsiCorsisti() throws DAOException {
 		
 		return corsoCorsistaBC.getAll();

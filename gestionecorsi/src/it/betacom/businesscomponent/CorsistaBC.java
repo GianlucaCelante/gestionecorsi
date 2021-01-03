@@ -54,15 +54,4 @@ public class CorsistaBC {
 		}
 		return corsista;
 	}
-	
-	public int[] getCodCorsisti() throws DAOException {
-		int[] corsisti=null;
-		try {
-			corsisti=CorsistaDAO.getFactory().getCodCorsisti(conn);
-		}catch(SQLException sql) {
-			throw new DAOException(sql);
-		}
-		return corsisti;
-	}
-	
 }

@@ -99,29 +99,6 @@ class FacadeTest {
 	}
 	
 	@Test
-	void testGetCodCorsisti() {
-
-		try {
-
-			int[] docs = ClientFacade.getIstance().getCodCorsisti();
-			
-			for(int d: docs) {
-				
-				System.out.println("valore: " + d);
-				
-			}
-			
-
-		} catch (DAOException | ClassNotFoundException | IOException exc) {
-
-			exc.printStackTrace();
-
-			fail("Recupero amministratore fallito");
-
-		}
-	}
-
-	@Test
 	void testGetAmministratoreById() {
 
 		try {

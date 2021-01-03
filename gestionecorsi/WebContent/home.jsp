@@ -42,11 +42,11 @@ if (admin != null) {
 				<thead>
 					<tr>
 
-						<td style="width: 150px;">Codice</td>
-						<td style="width: 200px;">Nome</td>
-						<td style="width: 200px;">Cognome</td>
-						<td style="width: 200px;">Precedenti formativi</td>
-						<td style="width: 200px;">Corso</td>
+						<td style="width: 150px;"><b>Codice</b></td>
+						<td style="width: 200px;"><b>Nome</b></td>
+						<td style="width: 200px;"><b>Cognome</b></td>
+						<td style="width: 200px;"><b>Precedenti formativi</b></td>
+						<td style="width: 200px;"><b>Corso</b></td>
 
 					</tr>
 
@@ -56,11 +56,19 @@ if (admin != null) {
 
 					<%
 					
-					int[] codCorsistiAttivi = ClientFacade.getIstance().getCodCorsisti();
+
+					CorsoCorsista[] cc = ClientFacade.getIstance().getCorsiCorsisti();
+
 					
-					for(int i = 0; i < codCorsistiAttivi.length; i++){
+					
+					for(int i = 0; i < cc.length; i++){
 						
-						Corsista corsista = ClientFacade.getIstance().getCorsista(codCorsistiAttivi[i]);
+						
+						Corsista corsista = ClientFacade.getIstance().getCorsista(cc[i].getCodCorsista());
+						
+						
+						Corso corso = ClientFacade.getIstance().getCorsoById(cc[i].getCodCorso());
+
 						
 					%>
 
@@ -71,6 +79,7 @@ if (admin != null) {
 						<td><%= corsista.getNomeCorsista() %></td>
 						<td><%= corsista.getCognomeCorsista() %></td>
 						<td><%= corsista.getPrecedentiFormativi() %></td>
+						<td><%= corso.getNomeCorso() %></td>
 
 					</tr>
 
@@ -86,8 +95,9 @@ if (admin != null) {
 			</table>
 			
 			
-			<button class="btn btn-info">
-			<a href="registra.jsp">Nuovo corsista</a>
+			<button class="btn btn-warning">
+			<a href="registra.jsp"></a>
+			Nuovo corsista
 			</button>
 
 		</div>

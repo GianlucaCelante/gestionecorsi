@@ -11,6 +11,7 @@ public interface DAOConstants {
 	String SELECT_CORSISTA_BYID = "select * from corsista where codcorsista = ?";
 	String SELECT_CORSO_BYID = "select * from corso where codcorso = ?";
 	String SELECT_AMMINISTRATORE_BYID = "select * from amministratore where codadmin = ?";
+	String SELECT_CORSO_ASSOCIATO_CORSISTI = "select codcorso from corso_corsista where codcorsista = ?";
 	
 	String SELECT_CORSISTI_CORSI_ATTIVI = "select codcorsista from corsista where codcorsista in (select codcorsista from corso_corsista where codcorso in (select codcorso from corso where (datainiziocorso<=sysdate and datafinecorso>sysdate)))";
 	

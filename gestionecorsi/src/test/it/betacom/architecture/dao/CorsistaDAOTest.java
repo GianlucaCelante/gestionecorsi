@@ -67,23 +67,6 @@ public class CorsistaDAOTest {
 
 	}
 	
-	
-	@Test
-	void testGetCodCorsisti() throws DAOException, ClassNotFoundException, IOException{
-		conn=DBAccess.getConnection();
-		try {
-			int[] corsisti = CorsistaDAO.getFactory().getCodCorsisti(conn);
-
-			for(int i = 0; i > corsisti.length; i++) {
-				System.out.println(corsisti[i]);
-			}
-			System.out.println();
-		}catch(DAOException exc) {
-			exc.printStackTrace();
-			fail("Recupero ordine fallito");
-		}
-	}
-	
 	@Test
 	void testGetCorsista() throws DAOException, ClassNotFoundException, IOException{
 		conn=DBAccess.getConnection();

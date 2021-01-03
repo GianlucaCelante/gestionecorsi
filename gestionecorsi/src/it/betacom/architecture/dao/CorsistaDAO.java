@@ -67,28 +67,6 @@ public class CorsistaDAO implements DAOConstants {
 		return corsista;
 	}
 	
-	
-	public int[] getCodCorsisti(Connection conn) throws DAOException {
-		int[] corsista = null;
-		try {
-			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = stmt.executeQuery(SELECT_CORSISTI_CORSI_ATTIVI);
-			rs.last();
-
-			corsista = new int[rs.getRow()];
-			rs.beforeFirst();
-			for (int i = 0; rs.next(); i++) {
-				
-				int codice = rs.getInt(1);
-				corsista[i] = codice;
-			}
-			rs.close();
-		} catch (SQLException sql) {
-			throw new DAOException(sql);
-		}
-		return corsista;
-	}
-	
 	public Corsista getCorsista(Connection conn, int codcorsista) throws DAOException {
 		
 		Corsista corsista = null;
