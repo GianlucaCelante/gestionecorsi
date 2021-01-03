@@ -1,8 +1,5 @@
 
 <%@page import="it.betacom.businesscomponent.CorsistaBC"%>
-<%@page import="it.betacom.architecture.dao.CorsistaDAO"%>
-<%@page import="it.betacom.architecture.dao.CorsoDAO"%>
-<%@page import="java.util.Date"%>
 <%@page import="it.betacom.businesscomponent.model.Corso"%>
 <%@page import="it.betacom.businesscomponent.model.CorsoCorsista"%>
 <%@page import="it.betacom.businesscomponent.ClientFacade"%>
