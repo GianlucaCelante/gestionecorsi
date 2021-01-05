@@ -1,3 +1,5 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Locale"%>
 <%
 	String admin = (String) session.getAttribute("admin");
 	if (admin == null) {
@@ -24,23 +26,29 @@
 			<table class="table table-hover" style="width: 100%;">
 				<thead>
 					<tr>
+						<th style="width: 200px">Codice Corso</th>
 						<th style="width: 200px">Nome Corso</th>
 						<th style="width: 200px">Data Inizio</th>
 						<th style="width: 200px">Data Fine</th>
 						<th style="width: 200px">Aula</th>
+						<th style="width: 200px">Codice Docente</th>
 						<th style="width: 200px">Rimuovi</th>
 					</tr>
 				</thead>
 				<tbody>
 					<%
-						Corso[] corsi = ClientFacade.getIstance().getCorsi();
+					Locale locale = request.getLocale();
+					DateFormat formato = DateFormat.getDateInstance(DateFormat.DEFAULT,locale);
+						Corso[] corsi = ClientFacade.getIstance().getCorsiAttivi();
 						for(int i = 0; i<corsi.length; i++){
 					%>
 					<tr>
+						<td><%= corsi[i].getCodCorso() %></td>
 						<td><%= corsi[i].getNomeCorso() %></td>
-						<td><%= corsi[i].getDataInizioCorso() %></td>
-						<td><%= corsi[i].getDataFineCorso() %></td>
-						<td><%= corsi[i].getAulaCorso() %></td>
+						<td><%= formato.format(corsi[i].getDataInizioCorso()) %></td>
+						<td><%= formato.format(corsi[i].getDataFineCorso()) %></td>
+						<td><%= corsi[i].getAulaCorso() %></td>						
+						<td><%= corsi[i].getCodDocente() %></td>
 						<td>
 							<form action="/<%=application.getServletContextName()%>/rimuovi?codCorso=<%=corsi[i].getCodCorso()%>"
 								method="post">

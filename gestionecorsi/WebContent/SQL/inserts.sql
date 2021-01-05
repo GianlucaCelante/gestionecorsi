@@ -11,6 +11,8 @@ insert into corsista values('Paolo', 'Bianchi', 3, 1);
 
 insert into corso values(1,1,'Informatica','20-MAG-2020','24-MAG-2021',50,'informatica','A5',15);
 insert into corso values(2,4,'Java','20-GIU-2020','24-LUG-2020',50,'informatica','A1',10);
+insert into corso values(3,3,'Informatica','20-MAG-2021','24-MAG-2021',50,'informatica','A5',15);
+insert into corso values(4,2,'Informatica','20-MAG-2020','25-GEN-2021',50,'informatica3','A7',8);
 
 insert into corso_corsista values(1,1);
 insert into corso_corsista values(1,2);

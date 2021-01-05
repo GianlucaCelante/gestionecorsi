@@ -127,5 +127,34 @@ public class CorsoDAO implements DAOConstants{
 		
 		
 	}
+	
+	public Corso[] getCorsiAttivi(Connection conn) throws DAOException{
+		Corso[] corsi = null;
+		try {
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet rs = stmt.executeQuery(SELECT_CORSI_ATTIVI);
+			rs.last();
+			
+			corsi = new Corso[rs.getRow()];
+			rs.beforeFirst();
+			for(int i = 0; rs.next(); i++) {
+				Corso c = new Corso();
+				c.setCodCorso(rs.getInt(1));
+				c.setCodDocente(rs.getInt(2));
+				c.setNomeCorso(rs.getString(3));
+				c.setDataInizioCorso(new java.util.Date(rs.getDate(4).getTime()));
+				c.setDataFineCorso(new java.util.Date(rs.getDate(5).getTime()));
+				c.setCostoCorso(rs.getDouble(6));
+				c.setCommentiCorso(rs.getString(7));
+				c.setAulaCorso(rs.getString(8));
+				c.setPostiDisp(rs.getInt(9));
+				corsi[i] = c;
+			}
+			rs.close();
+		}catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return corsi;
+	}
 }
 

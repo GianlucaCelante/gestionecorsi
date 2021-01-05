@@ -14,6 +14,7 @@ public interface DAOConstants {
 	String SELECT_CORSO_ASSOCIATO_CORSISTI = "select codcorso from corso_corsista where codcorsista = ?";
 	
 	String SELECT_CORSISTI_CORSI_ATTIVI = "select codcorsista from corsista where codcorsista in (select codcorsista from corso_corsista where codcorso in (select codcorso from corso where (datainiziocorso<=sysdate and datafinecorso>sysdate)))";
+	String SELECT_CORSI_ATTIVI = "select * from corso where (datainiziocorso<=sysdate and datafinecorso>sysdate)";
 	
 	String SELECT_CORSOSEQ = "select corso_seq.nextval from dual";
 	String SELECT_CORSISTASEQ = "select corsista_seq.nextval from dual";
