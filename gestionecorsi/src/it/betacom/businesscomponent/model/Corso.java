@@ -2,6 +2,8 @@ package it.betacom.businesscomponent.model;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 public class Corso {
 	private int codCorso;
 	private int codDocente;
