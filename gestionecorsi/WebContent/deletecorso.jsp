@@ -19,7 +19,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<div class="container" style="margin-top: 100px;">
-		<div class="page-header"">
+		<div class="page-header">
 			<h3>Corsi attualmente disponibili</h3>
 		</div>
 		<div class="table-responsive">
