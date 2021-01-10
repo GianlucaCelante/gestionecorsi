@@ -1,14 +1,14 @@
-
-<%@page import="it.betacom.businesscomponent.CorsistaBC"%>
-<%@page import="it.betacom.businesscomponent.model.Corso"%>
-<%@page import="it.betacom.businesscomponent.model.CorsoCorsista"%>
-<%@page import="it.betacom.businesscomponent.ClientFacade"%>
-<%@page import="it.betacom.businesscomponent.model.Corsista"%>
 <%
 	String admin = (String) session.getAttribute("admin");
 
 if (admin != null) {
 %>
+<%@page import="it.betacom.businesscomponent.CorsistaBC"%>
+<%@page import="it.betacom.businesscomponent.model.Corso"%>
+<%@page import="it.betacom.businesscomponent.model.CorsoCorsista"%>
+<%@page import="it.betacom.businesscomponent.ClientFacade"%>
+<%@page import="it.betacom.businesscomponent.model.Corsista"%>
+
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -56,19 +56,12 @@ if (admin != null) {
 
 					CorsoCorsista[] cc = ClientFacade.getIstance().getCorsiCorsisti();
 
-					
-					
 					for(int i = 0; i < cc.length; i++){
 						
-						
 						Corsista corsista = ClientFacade.getIstance().getCorsista(cc[i].getCodCorsista());
-						
-						
 						Corso corso = ClientFacade.getIstance().getCorsoById(cc[i].getCodCorso());
 
-						
 					%>
-
 
 					<tr>
 					
@@ -85,24 +78,16 @@ if (admin != null) {
 						}
 						
 					%>
-				
 
 				</tbody>
 
 			</table>
 			
-			
-			<button class="btn btn-warning">
-			<a href="registra.jsp"></a>
-			Nuovo corsista
-			</button>
+			<input type="button" value="Nuovo corsista" onclick="window.location='registra.jsp'" >
 
 		</div>
 
-
 	</div>
-
-
 
 </body>
 </html>
@@ -111,7 +96,6 @@ if (admin != null) {
 	} else {
 
 		response.sendRedirect("accessonegato.jsp");
-
 }
 %>
 
