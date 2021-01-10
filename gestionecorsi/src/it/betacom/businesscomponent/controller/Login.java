@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 					Amministratore amm = ammBC.getAmministratoreById(cod);
 					if (amm != null && amm.getPassword().equals(password)) {
 						session.setAttribute("admin", amm.getNomeAdmin());
-						response.sendRedirect("registra.jsp");
+						response.sendRedirect("home.jsp");
 					}else gestisciErrore(session, response);
 				}
 				else {

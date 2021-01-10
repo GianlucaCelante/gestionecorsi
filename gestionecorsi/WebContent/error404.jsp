@@ -17,7 +17,7 @@
 			<h2>Pagina non trovata</h2>
 			<p>La pagina che stai cercando potrebbe essere stata rimossa o il suo nome è cambiato.</p>
 			<p>Torna alla:</p>
-			<a href="index.jsp"><button type="button" class="btn btn-info">Home Page</button></a>
+			<a href="home.jsp"><button type="button" class="btn btn-info">Home Page</button></a>
 		</div>
 
 
