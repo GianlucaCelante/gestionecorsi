@@ -8,6 +8,8 @@ import java.sql.Statement;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
+import it.betacom.businesscomponent.model.Corsista;
+import it.betacom.businesscomponent.model.Corso;
 import it.betacom.businesscomponent.model.CorsoCorsista;
 
 public class CorsoCorsistaDAO implements DAOConstants {
@@ -25,13 +27,13 @@ public class CorsoCorsistaDAO implements DAOConstants {
 		}
 	}
 
-	public void create(Connection conn, CorsoCorsista entity) throws DAOException {
+	public void create(Connection conn, Corso corso, Corsista corsista) throws DAOException {
 		try {
 			rowSet.setCommand(SELECT_CORSOCORSISTA);
 			rowSet.execute(conn);
 			rowSet.moveToInsertRow();
-			rowSet.updateInt(1, entity.getCodCorso());
-			rowSet.updateInt(2, entity.getCodCorsista());
+			rowSet.updateInt(1, corso.getCodCorso());
+			rowSet.updateInt(2, corsista.getCodCorsista());
 			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
 			rowSet.acceptChanges();

@@ -38,7 +38,6 @@ public class IdGeneratorCorsista implements IdGeneratorInterface, DAOConstants {
 			id = rs.getInt(1);			
 		} catch (SQLException e) {
 			throw new DAOException(e);		
-		
 		}		
 		return id;
 	}

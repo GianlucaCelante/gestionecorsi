@@ -52,9 +52,9 @@ public class ClientFacade {
 
 	}
 
-	public void createCorsoCorsista(CorsoCorsista corsoCorsista) throws DAOException, ClassNotFoundException, IOException {
+	public void createCorsoCorsista(Corso corso, Corsista corsista) throws DAOException, ClassNotFoundException, IOException {
 
-		corsoCorsistaBC.create(corsoCorsista);
+		corsoCorsistaBC.create(corso, corsista);
 
 	}
 	

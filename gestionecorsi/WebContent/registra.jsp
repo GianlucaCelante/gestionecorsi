@@ -15,12 +15,12 @@
 			<h1 class="h3 font-weight-normal">Effettua la registrazione</h1>
 			<form class="form-signin" style="margin-top: 0%!important; margin-bottom: 0%!important;" action="/<%=application.getServletContextName()%>/registra" method="post">
 				<label class="text-left">Nome</label>
-				<input type="text" id="nome" class="form-control" placeholder="Nome" autocomplete="off" required autofocus>
+				<input type="text" id="nome" name="nomeCorsista" class="form-control" placeholder="Nome" autocomplete="off" required autofocus>
 				<label class="text-left">Cognome</label>
-				<input type="text" id="cognome" class="form-control" placeholder="Cognome" autocomplete="off" required autofocus>
+				<input type="text" id="cognome" name="cognomeCorsista" class="form-control" placeholder="Cognome" autocomplete="off" required autofocus>
 				<label class="text-left">Seleziona il corso</label>
 				<br>
-				<select class="custom-select" name="corsi" id="corsi">
+				<select class="custom-select" name="corso" id="corsi">
 					<option value="0">-- Seleziona --</option>
 					<%
 						Corso[] corsi = ClientFacade.getIstance().getCorsi();
@@ -33,11 +33,11 @@
 				<label class="text-left">Precedenti formativi</label>
 				<div class="form-group d-flex">
 					<div class="form-check" style="width:50%">
-						<input class="form-check-input" type="radio" name="radio" id="radioSi" value="Si">
+						<input class="form-check-input" type="radio" name="radio" id="radioSi" value="1">
 						<label class="form-check-label" for="radioSi">Si</label>
 					</div>
 					<div class="form-check" style="width:50%">
-						<input class="form-check-input" type="radio" name="radio" id="radioNo" value="No" checked>
+						<input class="form-check-input" type="radio" name="radio" id="radioNo" value="0" checked>
 						<label class="form-check-label" for="radioNo">No</label>
 					</div>
 				</div>

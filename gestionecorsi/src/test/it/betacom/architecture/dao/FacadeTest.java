@@ -120,9 +120,9 @@ class FacadeTest {
 
 		try {
 
-			ClientFacade.getIstance().createCorsoCorsista(corsoCorsista);
+			ClientFacade.getIstance().createCorsoCorsista(corso, corsista);
 
-			System.out.println("CorsoCorsista registrato " + corsoCorsista.toString());
+			System.out.println("Corso registrato " + corso.toString() + ", Corsista registrato " + corsista.toString());
 
 		} catch (DAOException | ClassNotFoundException | IOException exc) {
 

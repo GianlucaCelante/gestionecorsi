@@ -18,6 +18,7 @@ public interface DAOConstants {
 	
 	String SELECT_CORSOSEQ = "select corso_seq.nextval from dual";
 	String SELECT_CORSISTASEQ = "select corsista_seq.nextval from dual";
+	String SELECT_CORSISTA_VAL_ATTUALE = "select corsista_seq from dual";
 	
 	//modifiche francesco
 	String SELECT_CORSO_PIU_FREQUENTATO = "select nomecorso from corso where postidisp=(select min(postidisp) from corso)";

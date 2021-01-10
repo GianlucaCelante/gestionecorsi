@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import it.betacom.architecture.dao.CorsoCorsistaDAO;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dao.DBAccess;
+import it.betacom.businesscomponent.model.Corsista;
+import it.betacom.businesscomponent.model.Corso;
 import it.betacom.businesscomponent.model.CorsoCorsista;
 
 public class CorsoCorsistaBC {
@@ -16,9 +18,9 @@ public class CorsoCorsistaBC {
 		conn = DBAccess.getConnection();
 	}
 	
-	public void create(CorsoCorsista entity) throws DAOException, ClassNotFoundException, IOException {
+	public void create(Corso corso, Corsista corsista) throws DAOException, ClassNotFoundException, IOException {
 		try {
-			CorsoCorsistaDAO.getFactory().create(conn, entity);
+			CorsoCorsistaDAO.getFactory().create(conn, corso, corsista);
 		} catch (SQLException e) {
 			throw new DAOException(e);
 		}
