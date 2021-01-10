@@ -4,6 +4,8 @@ insert into docente values('Luigi', 'Bianchi', 'cv', 3);
 insert into docente values('Laura', 'Neri', 'cv', 4);
 
 insert into amministratore values('admin', 'admin', 1, 'pass');
+insert into amministratore values('admin2', 'admin2', 2, 'pass');
+
 
 insert into corsista values('Mario', 'Rossi', 1, 1);
 insert into corsista values('Luigi', 'Verdi', 2, 0);

@@ -13,7 +13,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="container">
+<div class="container" style="margin-top: 100px;">
 	<div class="page-header">
 		<h2>Errore interno dell'applicazione</h2>
 	</div>	
