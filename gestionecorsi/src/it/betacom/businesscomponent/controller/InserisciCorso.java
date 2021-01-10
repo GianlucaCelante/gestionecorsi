@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.businesscomponent.ClientFacade;
-import it.betacom.businesscomponent.idgenerator.IdGeneratorCorso;
 import it.betacom.businesscomponent.model.Corso;
 import it.betacom.businesscomponent.utilities.ValidaCorso;
 

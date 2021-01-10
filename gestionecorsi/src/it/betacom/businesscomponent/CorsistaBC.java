@@ -20,8 +20,7 @@ public class CorsistaBC {
 	
 	public void create(Corsista corsista) throws DAOException, ClassNotFoundException, IOException{
 		try {
-			idGen = IdGeneratorCorsista.getIstance();
-			corsista.setCodCorsista(idGen.nextId());
+		
 			CorsistaDAO.getFactory().create(conn, corsista);
 		}catch(SQLException sql) {
 			throw new DAOException(sql);
