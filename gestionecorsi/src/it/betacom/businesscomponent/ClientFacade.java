@@ -110,5 +110,30 @@ public class ClientFacade {
 		corsoBC.deleteCorso(codCorso);
 		
 	}
+	
+	//modifiche francesco
+	public Docente[] getDocentePiuCorsi() throws DAOException{
+		return docenteBC.getDocentePiuCorsi();
+	}
+	
+	public String[] getNomeCorsoPiuFrequentato() throws DAOException{
+		return corsoBC.getNomeCorsoPiuFrequentato();
+	}
+	
+	public String[] getDataInizioUltimoCorso() throws DAOException{
+		return corsoBC.getDataInizioUltimoCorso();
+	}
+	
+	public int getNumeroCommenti() throws DAOException{
+		return corsoBC.getNumeroCommenti();
+	}
+	
+	public Corso[] getCorsiDisponibili() throws DAOException{
+		return corsoBC.getCorsiDisponibili();
+	}
+	
+	public int getNumeroCorsisti() throws DAOException{
+		return corsistaBC.getNumeroCorsisti();
+	}
 
 }

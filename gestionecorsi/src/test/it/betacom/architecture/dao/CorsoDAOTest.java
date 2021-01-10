@@ -63,6 +63,63 @@ public class CorsoDAOTest {
 		}
 	}
 
+	//modifiche francesco
+	@Test
+	void testNomeCorsoPiuFrequentato() {
+		try {
+			String[] corsi = CorsoDAO.getFactory().getNomeCorsoPiuFrequentato(conn);
+			assertNotNull(corsi);
+			for(int i = 0; i<corsi.length; i++) {
+				System.out.println("corso più frequentato: "+corsi[i]);
+			}
+		} catch (DAOException e) {
+			e.printStackTrace();
+			fail("creazione articolo fallita");
+		}
+	}
+	
+	@Test
+	void testDataInizioUltimoCorso() {
+		try {
+			String[] corsi = CorsoDAO.getFactory().getDataInizioUltimoCorso(conn);
+			assertNotNull(corsi);
+			for(int i = 0; i<corsi.length; i++) {
+				System.out.println("nome ultimo corso: "+corsi[i]);
+				System.out.println("data ultimo corso: "+corsi[i+1]);
+				i++;
+			}
+		} catch (DAOException e) {
+			e.printStackTrace();
+			fail("creazione articolo fallita");
+		}
+	}
+	
+	@Test
+	void testNumeroCommenti() {
+		try {
+			int nCommenti = CorsoDAO.getFactory().getNumeroCommenti(conn);
+			System.out.println("numero commenti: "+nCommenti);
+		} catch (DAOException e) {
+			e.printStackTrace();
+			fail("creazione articolo fallita");
+		}
+	}
+	
+	@Test
+	void testCorsiDisponibili() {
+		try {
+			Corso[] corsi = CorsoDAO.getFactory().getCorsiDisponibili(conn);
+			assertNotNull(corsi);
+			for(int i = 0; i<corsi.length; i++) {
+				System.out.println("nome corso disponibile: "+corsi[i].getNomeCorso());
+			}
+		} catch (DAOException e) {
+			e.printStackTrace();
+			fail("creazione articolo fallita");
+		}
+	}
+	//fine modifiche
+	
 	@AfterAll
 	static void cleanUp() throws Exception{
 		try {

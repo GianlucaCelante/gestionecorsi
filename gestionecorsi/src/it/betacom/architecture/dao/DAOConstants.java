@@ -18,4 +18,15 @@ public interface DAOConstants {
 	
 	String SELECT_CORSOSEQ = "select corso_seq.nextval from dual";
 	String SELECT_CORSISTASEQ = "select corsista_seq.nextval from dual";
+	
+	//modifiche francesco
+	String SELECT_CORSO_PIU_FREQUENTATO = "select nomecorso from corso where postidisp=(select min(postidisp) from corso)";
+	String SELECT_NUMERO_COMMENTI = "select count(commenticorso) from corso";
+	String SELECT_CORSI_DISPONIBILI = "select * from corso where postidisp>0";
+	String SELECT_ULTIMO_CORSO = "select nomecorso,datainiziocorso from corso where datainiziocorso=(select max(datainiziocorso) from corso)";//"select max(datainiziocorso) from corso";
+	
+	String SELECT_TOT_CORSISTI = "select count(codcorsista) from corsista";
+	
+	String SELECT_DOCENTE_CORSI = "select * from docente where coddocente=(select coddocente from corso where (select count(coddocente) from corso group by coddocente)>1 group by coddocente)";
+
 }

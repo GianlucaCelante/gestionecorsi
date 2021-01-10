@@ -54,4 +54,15 @@ public class CorsistaBC {
 		}
 		return corsista;
 	}
+	
+	//modifiche francesco
+	public int getNumeroCorsisti() throws DAOException{
+		int nCorsisti = 0;
+		try {
+			nCorsisti = CorsistaDAO.getFactory().getNumeroCorsisti(conn);
+		}catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return nCorsisti;
+	}
 }

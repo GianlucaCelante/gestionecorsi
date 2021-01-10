@@ -100,4 +100,17 @@ public class CorsistaDAO implements DAOConstants {
 		
 	}
 	
+	//modifiche francesco
+	public int getNumeroCorsisti(Connection conn) throws DAOException{
+		int nCorsisti = 0;
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(SELECT_TOT_CORSISTI);
+			if(rs.next())
+				nCorsisti = rs.getInt(1);
+		} catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return nCorsisti;
+	}
 }

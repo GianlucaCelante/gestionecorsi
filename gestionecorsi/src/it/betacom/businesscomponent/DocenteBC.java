@@ -25,4 +25,15 @@ private Connection conn;
 		}
 		return docenti;
 	}
+	
+	//modifiche francesco
+	public Docente[] getDocentePiuCorsi() throws DAOException{
+		Docente[] docenti = null;
+		try {
+			docenti=DocenteDAO.getFactory().getDocentePiuCorsi(conn);
+		}catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return docenti;
+	}
 }
