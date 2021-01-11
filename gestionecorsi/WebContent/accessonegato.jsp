@@ -19,8 +19,6 @@
 			<a href="index.jsp"><button type="button" class="btn btn-info">Login</button></a>
 		</div>
 
-
-</body><body>
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

@@ -20,8 +20,6 @@
 			<a href="home.jsp"><button type="button" class="btn btn-info">Home Page</button></a>
 		</div>
 
-
-</body><body>
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

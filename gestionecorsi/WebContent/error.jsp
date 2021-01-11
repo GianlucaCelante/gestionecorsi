@@ -90,6 +90,6 @@
 		}
 	%>
 </div>
-<footer class="footer"><%@include file="footer.jsp" %></footer>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
