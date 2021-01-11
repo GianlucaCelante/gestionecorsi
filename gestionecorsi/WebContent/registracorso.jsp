@@ -174,7 +174,7 @@ if (admin != null) {
 			<div class="row">
 				<div class="col-md-4 col md-offset-1">
 					<button type="submit" class="btn btn-primary">
-						Registrati&nbsp;<span class="glyphicon glyphicon-send"></span>
+						Registra&nbsp;<span class="glyphicon glyphicon-send"></span>
 					</button>
 				</div>
 			</div>
