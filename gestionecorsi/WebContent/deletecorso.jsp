@@ -57,11 +57,21 @@
 							</form>
 						</td>
 					</tr>
+					
+					
+					
 					<%
 						}
 					%>
+					
+					
+					
 				</tbody>
 			</table>
+			
+			
+			<input type="button" value="Nuovo corso" onclick="window.location='registracorso.jsp'" >
+			
 		</div>
 		
 		<%
