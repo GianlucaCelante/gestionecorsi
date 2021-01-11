@@ -38,7 +38,7 @@ public class InserisciCorso extends HttpServlet {
 						
 				ClientFacade.getIstance().createCorso(corso);
 						
-				response.sendRedirect("home.jsp");
+				response.sendRedirect("deletecorso.jsp");
 			}
 		} catch (DAOException | ClassNotFoundException | IOException | ParseException e) {
 			e.printStackTrace();
