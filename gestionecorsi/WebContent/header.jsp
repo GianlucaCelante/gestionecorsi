@@ -7,7 +7,7 @@
 		%>
 				<a class="p-2 text-dark" href="statistica.jsp">Visualizza Statistiche</a>
 				<a class="p-2 text-dark" href="deletecorso.jsp">Visualizza Corsi</a>
-				<a class="p-2 text-dark" href="gestioneadmin.jsp"><%=admin %></a>
+				<a class="p-2 text-dark" href=""><%=admin %></a>
 				<a class="p-2 text-dark" href="logout">Logout</a>
 		<%
 			}else{
