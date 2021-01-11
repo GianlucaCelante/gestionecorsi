@@ -1,4 +1,4 @@
-<div class="fixed-bottom bg-white" style="border-top:1px solid grey;">
+<div class="bg-white" style="border-top:1px solid grey;">
 	<div class="d-flex mb-2 mt-2">
 		<div class="bg-white ml-5" style="width:50%;">
 			Seguici anche su: 	<br><a href="#">Facebook</a>
