@@ -49,9 +49,7 @@
 			}
 		%>
 	</div>
-	<h3>Durata media dei corsi (in giorni lavorativi):</h3>
-	<div class="card card-body bg-light">
-	</div>
+	
 	<h3>Numero di commenti presenti:</h3>
 	<div class="card card-body bg-light">
 		<%
@@ -71,20 +69,7 @@
 		<p>Precedenti formativi: 
 		</p> <% if(corsisti[i].getPrecedentiFormativi() == 1){%><p>Si</p><%}else{ %><p>No</p><%}}%>
 	</div>
-	<h3>Docenti di pi&ugrave; corsi:</h3>
-	<div class="card card-body bg-light">
-	<%
-		Docente[] docenti = ClientFacade.getIstance().getDocentePiuCorsi();
-		for(int i = 0; i<docenti.length; i++){
-	%>
-	<p>Nome: <%=docenti[i].getNomeDocente() %></p>
-	<p>Cognome: <%=docenti[i].getCognomeDocente() %></p>
-	<p>CV docente: <%=docenti[i].getCvDocente() %></p>
-	<p>Codice docente: <%=docenti[i].getCodDocente() %></p> 
-	</div>
-	<%
-		}
-	%>
+	
 		<h3>Corsi con posti disponibili:</h3>
 		<%
 			Corso[] corsiDisponibili = ClientFacade.getIstance().getCorsiDisponibili();
